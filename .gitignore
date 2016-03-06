@@ -1,4 +1,3 @@
-Berksfile.lock
 *~
 *#
 .#*
@@ -11,6 +10,10 @@ Gemfile.lock
 bin/*
 .bundle/*
 
+# Chef
+.vagrant
 .kitchen/
 .kitchen.local.yml
-.vagrant
+.chef/*
+!.chef/knife.rb
+Berksfile.lock
