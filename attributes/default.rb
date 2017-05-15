@@ -22,13 +22,5 @@
   accept_env: 'LANG LC_* GIT_*'
 }.each { |k, v| default['openssh']['server'][k.to_s] = v.to_s }
 
-# tmux
-{
-  version: '2.1',
-  install_method: 'source',
-  checksum: '31564e7bf4bcef2defb3cb34b9e596bd43a3937cad9e5438701a81a5a9af6176'
-}.each { |k, v| default['tmux'][k.to_s] = v.to_s }
-default['tmux']['session_opts']['prefix'] = 'C-b'
-
 # ruby
 default['ruby-ng']['ruby_version'] = '2.3'

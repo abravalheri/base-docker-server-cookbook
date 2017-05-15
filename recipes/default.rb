@@ -13,25 +13,19 @@ include_recipe 'apt' if platform_family?('debian')
 
 include_recipe 'openssh'
 
-include_recipe 'tmux'
-include_recipe 'git'
-include_recipe 'dotfiles'
+python_runtime '2'
+python_runtime '3'
 
-package value_for_platform_family(
-  %w(debian) => ['vim-nox'],
-  %w(rhel fedora) => ['vim-minimal', 'vim-enhanced'],
-  'default' => ['vim']
-)
-
-package 'xclip'
-
-include_recipe 'ruby-ng::dev'
-include_recipe 'python'
+if platform_family?('debian')
+  include_recipe 'ruby-ng::dev'
+else
+  package 'ruby'
+end
 
 docker_service 'default' do
   action [:create, :start]
 end
 
-python_pip 'docker-compose'
+python_package 'docker-compose'
 
 include_recipe 'dotfiles'

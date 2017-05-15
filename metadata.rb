@@ -11,13 +11,13 @@ issues_url 'https://github.com/abravalheri/base-docker-server-cookbook/issues'
 description 'Wrapper cookbook that installs/configures a docker-server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 
-depends 'apt', '~> 3.0.0'
-depends 'openssh', '~> 1.6.1'
-depends 'tmux', '~> 1.5.0'
-depends 'git', '~> 4.3.7'
+chef_version '>= 12.1' if respond_to?(:chef_version)
+
+depends 'apt', '~> 6.1.0'
+depends 'openssh', '~> 2.3.1'
 depends 'ruby-ng', '~> 0.3.0'
-depends 'python', '~> 1.4.6'
-depends 'docker', '~> 2.5.8'
+depends 'poise-python', '~> 1.6.0'
+depends 'docker', '~> 2.15.6'
 
 depends 'dotfiles'
 
