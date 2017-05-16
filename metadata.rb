@@ -14,7 +14,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
 depends 'apt', '~> 6.1.0'
-depends 'openssh', '~> 2.3.1'
+depends 'openssh'
 depends 'ruby-ng', '~> 0.3.0'
 depends 'poise-python', '~> 1.6.0'
 depends 'docker', '~> 2.15.6'
